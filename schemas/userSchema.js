@@ -27,14 +27,6 @@ const UserSchema = new Schema({
     type: Boolean,
     required: [true],
   },
-  createdAt: {
-    type: Date,
-    required: [true],
-  },
-  updatedAt: {
-    type: Date,
-    required: [true],
-  },
 });
 const UserModel = model("User", UserSchema);
 
