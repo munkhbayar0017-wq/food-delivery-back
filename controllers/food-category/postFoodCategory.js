@@ -1,11 +1,11 @@
 const FoodCategoryModel = require("../../schemas/foodCategorySchema");
 const postFoodCategory = async (req, res) => {
-  const { categoryName, createdAt, updatedAt } = req.body;
+  const { categoryName } = req.body;
   try {
     const data = await FoodCategoryModel.create({
       categoryName: categoryName,
-      createdAt: createdAt,
-      updatedAt: updatedAt,
+      createdAt: new Date(),
+      updatedAt: new Date(),
     });
     res.status(201).json(`postFoodCategory: ${data}`);
   } catch (err) {
