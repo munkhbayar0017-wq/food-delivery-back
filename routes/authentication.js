@@ -6,7 +6,7 @@ const isEmailExist = require("../middleware/isEmailExist");
 
 const authenticationRouter = express.Router();
 
-authenticationRouter.get("/login", isUserExist, loginUser);
+authenticationRouter.post("/login", isUserExist, loginUser);
 authenticationRouter.post("/sign-up", isEmailExist, postUser);
 
 module.exports = authenticationRouter;

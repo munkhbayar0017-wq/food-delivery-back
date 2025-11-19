@@ -7,6 +7,7 @@ const loginUser = async (req, res) => {
   try {
     // const user = await UserModel.findOne({ email });
     const hashedPassword = user.password;
+
     const comparedPassword = await bcrypt.compare(password, hashedPassword);
     console.log("hashedPassword", hashedPassword);
     console.log("password", password);

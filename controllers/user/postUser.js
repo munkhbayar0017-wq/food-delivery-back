@@ -1,7 +1,7 @@
 const UserModel = require("../../schemas/userSchema");
 const bcrypt = require("bcrypt");
 const postUser = async (req, res) => {
-  const { email, password, phoneNumber, address, role, isVerified } = req.body;
+  const { email, password } = req.body;
 
   const SALT_ROUND = 10;
 
@@ -14,10 +14,6 @@ const postUser = async (req, res) => {
     const data = await UserModel.create({
       email: email,
       password: hashedPassword,
-      phoneNumber: phoneNumber,
-      address: address,
-      role: role,
-      isVerified: isVerified,
     });
     res.status(201).json(`postUser: ${data}`);
   } catch (err) {
