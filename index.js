@@ -4,6 +4,7 @@ const connectToDB = require("./db");
 const userRoutes = require("./routes/userRoutes");
 const foodCategoryRouter = require("./routes/foodCategoryRoutes");
 const authenticationRouter = require("./routes/authentication");
+const foodAuthenticationRouter = require("./routes/foodAuthentication");
 
 const app = express();
 const PORT = process.env.PORT || 168;
@@ -16,6 +17,7 @@ connectToDB();
 app.use("/user", userRoutes);
 app.use("/food-category", foodCategoryRouter);
 app.use("/authentication", authenticationRouter);
+app.use("/foodauthenticationrouter", foodAuthenticationRouter);
 
 app.listen(PORT, () => {
   console.log(`API listening on http://localhost:${PORT}`);
