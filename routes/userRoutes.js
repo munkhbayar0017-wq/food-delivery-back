@@ -12,6 +12,6 @@ userRouter.put("/", putUser);
 
 userRouter.delete("/", deleteUser);
 
-userRouter.post("/", postUser);
+// userRouter.post("/", postUser);
 
 module.exports = userRouter;
