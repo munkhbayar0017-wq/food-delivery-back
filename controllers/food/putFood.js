@@ -1,7 +1,7 @@
 const FoodModel = require("../../schemas/foodSchema");
 
 const putFood = async (req, res) => {
-  const { id, foodName, price, ingredients, createdAt, updatedAt } = req.body;
+  const { id, foodName, price, ingredients, category } = req.body;
   console.log("idididididid", id);
   try {
     const data = await FoodModel.findByIdAndUpdate(
@@ -10,8 +10,8 @@ const putFood = async (req, res) => {
         foodName,
         price,
         ingredients,
-        createdAt,
-        updatedAt,
+        category,
+        updatedAt: new Date(),
       },
       { new: true }
     );
