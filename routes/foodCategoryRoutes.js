@@ -10,7 +10,7 @@ foodCategoryRouter.get("/", getFoodCategory);
 
 foodCategoryRouter.put("/", putFoodCategory);
 
-foodCategoryRouter.delete("/", deleteFoodCategory);
+foodCategoryRouter.delete("/:id", deleteFoodCategory);
 
 foodCategoryRouter.post("/", postFoodCategory);
 

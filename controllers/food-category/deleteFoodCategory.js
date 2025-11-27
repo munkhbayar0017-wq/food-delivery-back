@@ -1,8 +1,8 @@
 const FoodCategoryModel = require("../../schemas/foodCategorySchema");
 
 const deleteFoodCategory = async (req, res) => {
-  const { id } = req.body;
-  console.log("idididididid", id);
+  const { id } = req.params;
+  console.log("idididididid food category", id);
   try {
     const data = await FoodCategoryModel.findByIdAndDelete(id);
     res.status(200).json(`deleteFoodCategory: ${data}`);
