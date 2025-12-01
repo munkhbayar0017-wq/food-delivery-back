@@ -2,7 +2,6 @@ const UserModel = require("../../schemas/foodCategorySchema");
 
 const putFoodCategory = async (req, res) => {
   const { id, categoryName } = req.body;
-  console.log("idididididid", id);
   try {
     const data = await UserModel.findByIdAndUpdate(
       id,
