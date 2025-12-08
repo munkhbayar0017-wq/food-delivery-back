@@ -6,6 +6,9 @@ const foodCategoryRouter = require("./routes/foodCategoryRoutes");
 const authenticationRouter = require("./routes/authentication");
 const foodRouter = require("./routes/foodRoutes");
 const orderRouter = require("./routes/orderRoutes");
+const dotenv = require("dotenv");
+
+dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 168;

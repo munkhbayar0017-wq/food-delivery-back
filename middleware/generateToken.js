@@ -1,8 +1,7 @@
 const jwt = require("jsonwebtoken");
-const JWT_SECRET = "This is secret";
 
 const generateToken = (user) => {
-  return jwt.sign({ user }, JWT_SECRET, { expiresIn: "24h" });
+  return jwt.sign({ user }, process.env.JWT_SECRET, { expiresIn: "24h" });
 };
 
 module.exports = { generateToken };
