@@ -22,8 +22,14 @@ const OrderSchema = new Schema(
     foodOrderItems: {
       type: [FoodOrderItem],
     },
+    address: {
+      type: String,
+      required: [true],
+    },
     status: {
       type: String,
+      enum: ["PENDING", "CANCELED", "DELIVERED"],
+      default: "PENDING",
     },
   },
   { timestamps: true }

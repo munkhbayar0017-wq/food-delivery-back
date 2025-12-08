@@ -1,12 +1,14 @@
 const OrderModel = require("../../schemas/orderSchema");
 const postOrder = async (req, res) => {
-  const { user, totalPrice, foodOrderItems, status } = req.body;
+  console.log(req.user);
+  const { totalPrice, foodOrderItems, status, address } = req.body;
   try {
     const data = await OrderModel.create({
-      user: user,
+      user: req.user._id,
       totalPrice: totalPrice,
       foodOrderItems: foodOrderItems,
       status: status,
+      address: address,
     });
     console.log("data", data);
     res.status(201).json(data);
