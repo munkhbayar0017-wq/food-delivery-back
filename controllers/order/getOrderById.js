@@ -2,14 +2,14 @@ const OrderModel = require("../../schemas/orderSchema");
 
 const getOrderById = async (req, res) => {
   try {
-    const orderId = req.params.id;
-    const userId = req.user.id; // verifyJWT middleware-аас ирж байгаа гэж үзэж байна
+    const userId = req.user._id;
 
-    const data = await OrderModel.findOne({
-      _id: orderId,
-      user: userId, // ← ЭНД ШҮҮЖ БАЙГАА НЬ!
+    console.log("this is undefined", userId);
+
+    const data = await OrderModel.find({
+      user: userId,
     })
-      .populate("user", "name email phone")
+      .populate("user")
       .populate("foodOrderItems.food");
 
     if (!data) {

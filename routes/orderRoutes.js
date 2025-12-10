@@ -10,7 +10,7 @@ const orderRouter = express.Router();
 
 orderRouter.get("/", verifyJWT, getOrder);
 
-orderRouter.get("/:id", verifyJWT, getOrderById);
+orderRouter.get("/userId", verifyJWT, getOrderById);
 
 orderRouter.put("/", verifyJWT, putOrder);
 

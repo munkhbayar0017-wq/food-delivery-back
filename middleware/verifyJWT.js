@@ -15,6 +15,7 @@ const verifyJWT = (req, res, next) => {
     }
     console.log("decoded--------", decoded);
     req.user = decoded.user;
+    console.log("req.user-------- working", req.user);
     next();
   });
 };
