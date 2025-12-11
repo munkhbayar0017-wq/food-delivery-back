@@ -24,6 +24,10 @@ app.use("/order", orderRouter);
 app.use("/food-category", foodCategoryRouter);
 app.use("/authentication", authenticationRouter);
 
+app.get("/", (req, res) => {
+  res.send("Working");
+});
+
 app.listen(PORT, () => {
   console.log(`API listening on http://localhost:${PORT}`);
 });
